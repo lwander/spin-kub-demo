@@ -4,6 +4,6 @@ ADD . /go/src/github.com/lwander/k8s-demo
 
 RUN go install github.com/lwander/k8s-demo
 
-ADD index.html /go/bin
+ADD ./content /content
 
 ENTRYPOINT /go/bin/k8s-demo
