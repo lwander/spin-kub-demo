@@ -9,7 +9,7 @@ import (
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
-	bs, err := ioutil.ReadFile("index.html")
+	bs, err := ioutil.ReadFile("/content/index.html")
 
 	if err != nil {
 		fmt.Printf("Couldn't read index.html: %v", err);
