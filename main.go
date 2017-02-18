@@ -9,6 +9,7 @@ import (
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
+	fmt.Printf("Handling %+v\n", r);
 	bs, err := ioutil.ReadFile("/content/index.html")
 
 	if err != nil {
@@ -21,5 +22,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", index)
-	http.ListenAndServe(":8000", nil)
+	port := ":8000"
+	fmt.Printf("Starting to service on port %s\n", port);
+	http.ListenAndServe(port, nil)
 }
